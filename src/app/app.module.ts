@@ -1,18 +1,26 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './routes/app-routing.module';
+// import { RouterModule } from '@angular/router';
+import { RoutesModule } from './routes/routes.module';
+
 import { AppComponent } from './app.component';
+import { environment } from 'src/environments/environment';
+import { from } from 'rxjs';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    RoutesModule,
+    // RouterModule,
   ],
-  providers: [],
+  // providers: [{
+  //   useValue: environment.baseUrl
+  // }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
