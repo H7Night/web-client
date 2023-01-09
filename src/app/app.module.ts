@@ -3,10 +3,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// import { RouterModule } from '@angular/router';
-import { RoutesModule } from './routes/routes.module';
-
 import { AppComponent } from './app.component';
+
+import { RoutesModule } from './routes/routes.module';
 import { SharedModule } from './shared/shared.module';
 import { environment } from 'src/environments/environment';
 import { from } from 'rxjs';
@@ -18,11 +17,8 @@ import { from } from 'rxjs';
     BrowserAnimationsModule,
     RoutesModule,
     SharedModule,
-    // RouterModule,
   ],
-  // providers: [{
-  //   useValue: environment.baseUrl
-  // }],
-  bootstrap: [AppComponent]
+  //providers: [{ useValue: environment.baseUrl }],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
