@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoutesModule } from './routes/routes.module';
 
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
 import { environment } from 'src/environments/environment';
 import { from } from 'rxjs';
 
@@ -16,6 +17,7 @@ import { from } from 'rxjs';
     BrowserModule,
     BrowserAnimationsModule,
     RoutesModule,
+    SharedModule,
     // RouterModule,
   ],
   // providers: [{
