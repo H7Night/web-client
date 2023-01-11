@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import { SharedModule } from '../shared/shared.module';
 import { RoutesRoutingModule } from './routes-routing.module';
+
 import { DashboardComponent } from "./dashboard/dashboard.component";
 
 const COMPONENTS: any[] = [
@@ -11,13 +11,7 @@ const COMPONENTS: any[] = [
 const COMPONENTS_DYNAMIC: any[] = [];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RoutesRoutingModule,
-  ],
-  declarations: [
-    ...COMPONENTS,
-    ...COMPONENTS_DYNAMIC,
-  ],
+  imports: [SharedModule, RoutesRoutingModule],
+  declarations: [...COMPONENTS, ...COMPONENTS_DYNAMIC],
 })
 export class RoutesModule { }

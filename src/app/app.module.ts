@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -18,7 +17,6 @@ import { from } from 'rxjs';
     RoutesModule,
     SharedModule,
   ],
-  //providers: [{ useValue: environment.baseUrl }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
