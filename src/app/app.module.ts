@@ -1,18 +1,26 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './routes/dashboard/dashboard.component';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { RoutesModule } from './routes/routes.module';
+// import { RoutesRoutingModule } from './routes/routes-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    CoreModule,
+    SharedModule,
+    RoutesModule,
+    // RoutesRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
