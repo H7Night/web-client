@@ -1,27 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-// import { MaterialModule } from './material-module';
-// import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { MaterialModule } from '../material.module';
+
+const MODULES: any[] = [
+  CommonModule,
+  RouterModule,
+  MaterialModule,
+]
 
 @NgModule({
-  declarations: [
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule,
-    ReactiveFormsModule,
-    // MaterialModule,
-  ],
-  exports: [
-    CommonModule,
-    FormsModule,
-    RouterModule,
-    ReactiveFormsModule,
-    // MaterialModule,
-  ],
+
+  imports: [...MODULES],
+  exports: [...MODULES],
+  declarations: [],
 })
-export class SharedModule {}
+export class SharedModule { }
