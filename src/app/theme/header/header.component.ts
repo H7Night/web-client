@@ -12,6 +12,7 @@ export class HeaderComponent
 {
   @HostBinding('class') clas = 'blog-header';
   @Input() showToggle = true;
+  @Input() showBranding = false;
 
   @Output() toggleSideNav = new EventEmitter<void>();
   @Output() toggleSideNavNotice = new EventEmitter<void>();
