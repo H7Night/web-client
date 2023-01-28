@@ -1,5 +1,23 @@
-<!-- <div>
-    <app-header *ngIf="options.showHeader && options.headerPos === above"
+<div>
+  <app-header
+    *ngIf="options.showHeader && options.headerPos === 'above'"
+    (toggleSideNav)="sidenav.toggle()"
+    (toggleSideNavNotice)="sidenavNotice.toggle()"
+    [showBranding]="true"
+  ></app-header>
 
-    ></app-header>
-</div> -->
+  <mat-sidenav-container class="blog-container" autosize autoFocus>
+    <mat-sidenav
+      #sidenav
+      class="blog-sidenav"
+      [mode]="isOver ? 'over' : 'side'"
+      [opened]="options.navPos === 'side' && options.sidenavOpened && !isOver"
+      (openedChange)="onSidenavOpenedChange($event)"
+      (closedStart)="onSidenavClosedStart()"
+    >
+      <!-- <app-sidebar > </app-sidebar> -->
+    </mat-sidenav>
+  </mat-sidenav-container>
+
+  <mat-sidenav #sidenavNotice position="end" mode="over"> </mat-sidenav>
+</div>
