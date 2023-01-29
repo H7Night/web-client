@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { ThemeModule } from './theme/theme.module';
 import { RoutesModule } from './routes/routes.module';
 import { RoutesRoutingModule } from './routes/routes-routing.module';
 
@@ -20,7 +21,8 @@ import { RoutesRoutingModule } from './routes/routes-routing.module';
     CoreModule,
     SharedModule,
     RoutesModule,
-    RoutesRoutingModule
+    RoutesRoutingModule,
+    ThemeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

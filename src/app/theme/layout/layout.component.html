@@ -1,10 +1,11 @@
-<div>
+<div >
   <app-header
     *ngIf="options.showHeader && options.headerPos === 'above'"
-    (toggleSideNav)="sidenav.toggle()"
-    (toggleSideNavNotice)="sidenavNotice.toggle()"
+    (toggleSidenav)="sidenav.toggle()"
+    (toggleSidenavNotice)="sidenavNotice.toggle()"
     [showBranding]="true"
-  ></app-header>
+  >
+  </app-header>
 
   <mat-sidenav-container class="blog-container" autosize autoFocus>
     <mat-sidenav
@@ -15,9 +16,29 @@
       (openedChange)="onSidenavOpenedChange($event)"
       (closedStart)="onSidenavClosedStart()"
     >
-      <!-- <app-sidebar > </app-sidebar> -->
+      <app-sidebar
+        [showToggle]="!isOver"
+        [showUser]="!!options.showUserPanel"
+        [showHeader]="options.headerPos !== 'above'"
+        (toggleCollapsed)="toggleCollapsed()"
+        [toggleChecked]="options.sidenavCollapsed"
+      >
+      </app-sidebar>
     </mat-sidenav>
-  </mat-sidenav-container>
 
-  <mat-sidenav #sidenavNotice position="end" mode="over"> </mat-sidenav>
+    <mat-sidenav #sidenavNotice position="end" mode="over">
+      <app-sidebar-notice></app-sidebar-notice>
+    </mat-sidenav>
+
+    <mat-sidenav-content #content class="blog-contnet-warp">
+      <app-header
+        *ngIf="options.showHeader && options.headerPos !== 'above'"
+        [showToggle]="!options.sidenavCollapsed && options.navPos !== 'top'"
+        [showBranding]="options.navPos === 'top'"
+        (toggleSideNav)="sidenav.toggle()"
+        (toggleSideNavNotice)="sidenavNotice.toggle()"
+      >
+      </app-header>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
