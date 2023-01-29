@@ -1,4 +1,4 @@
-<div >
+<div>
   <app-header
     *ngIf="options.showHeader && options.headerPos === 'above'"
     (toggleSidenav)="sidenav.toggle()"
@@ -16,6 +16,7 @@
       (openedChange)="onSidenavOpenedChange($event)"
       (closedStart)="onSidenavClosedStart()"
     >
+    
       <app-sidebar
         [showToggle]="!isOver"
         [showUser]="!!options.showUserPanel"

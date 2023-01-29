@@ -16,7 +16,7 @@ export interface AppSettings {
     theme: 'auto',
     showHeader: true,
     headerPos: 'fixed',
-    showUserPanel: true,
+    showUserPanel: false,
     sidenavOpened: true,
     sidenavCollapsed: false,
     language: 'en-US',
