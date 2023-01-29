@@ -1,8 +1,21 @@
 <mat-toolbar class="blog-toolbar">
+  <!-- SideBar按钮 -->
   <button mat-icon-button *ngIf="showToggle" (click)="toggleSideNav.emit()">
     <mat-icon>menu</mat-icon>
   </button>
+  <!-- 主页按钮 -->
   <button mat-icon-button>
     <mat-icon>home</mat-icon>
+  </button>
+
+  <span class="blog-toolbar-spacer"></span>
+
+  <!-- 全屏按钮 -->
+  <button mat-icon-button (click)="toggleFullScreen()">
+    <mat-icon>fullscreen</mat-icon>
+  </button>
+  <!-- 右侧栏按钮 -->
+  <button mat-icon-button (click)="toggleSideNavNotice.emit()">
+    <mat-icon>list</mat-icon>
   </button>
 </mat-toolbar>
