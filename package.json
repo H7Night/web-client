@@ -3,7 +3,7 @@
   "version": "0.0.0-NOT-USED",
   "scripts": {
     "ng": "ng",
-    "s": "ng serve",
+    "s": "ng serve --o",
     "test": "ng test",
     "test:ci": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
     "e2e": "ng e2e",

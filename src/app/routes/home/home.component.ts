@@ -1,4 +1,5 @@
 import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
+import { Router, NavigationExtras} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,14 @@ import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./home.component.less'],
   encapsulation: ViewEncapsulation.None,
 })
-export class HomeComponent{
+export class HomeComponent
+{
   @HostBinding('class') class = 'blog-header';
+  constructor(private router: Router) { }
+
+  toDashboard()
+  {
+    this.router.navigate(['/dashboard']);
+  }
 
 }
