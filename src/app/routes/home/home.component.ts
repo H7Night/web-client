@@ -14,7 +14,7 @@ export class HomeComponent
 
   toDashboard()
   {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['blog/dashboard']);
   }
 
 }
