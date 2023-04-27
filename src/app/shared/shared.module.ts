@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { MaterialModule } from '../material.module';
-import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { ErrorCodeComponent } from './components/error-code/error-code.component';
 
 const MODULES: any[] = [
@@ -11,7 +10,7 @@ const MODULES: any[] = [
   RouterModule,
   MaterialModule,
 ]
-const COMPONENTS: any[] = [BreadcrumbComponent, ErrorCodeComponent];
+const COMPONENTS: any[] = [ ErrorCodeComponent ];
 const COMPONENTS_DYNAMIC: any[] = [];
 @NgModule({
 
