@@ -34,13 +34,16 @@ export class HeaderComponent {
   toHome() {
     this.router.navigate(['blog/home']);
   }
-  one() {
-
+  toBlog() {
+    this.router.navigate(['blog/blog']);
   }
-  two() {
-
+  toArchive() {
+    this.router.navigate(['blog/archive']);
   }
   toAbout() {
     this.router.navigate(['blog/about']);
+  }
+  changeMode() {
+
   }
 }
