@@ -1,5 +1,14 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, Output, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  HostBinding,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 import screenfull from 'screenfull';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,19 +17,30 @@ import screenfull from 'screenfull';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent
-{
+export class HeaderComponent {
   @HostBinding('class') clas = 'blog-header';
   @Input() showToggle = true;
   @Input() showBranding = false;
 
   @Output() toggleSideNav = new EventEmitter<void>();
   @Output() toggleSideNavNotice = new EventEmitter<void>();
+  constructor(private router: Router) {}
 
-  toggleFullScreen()
-  {
+  toggleFullScreen() {
     if (screenfull.isEnabled) {
       screenfull.toggle();
     }
+  }
+  toHome() {
+    this.router.navigate(['blog/home']);
+  }
+  one() {
+
+  }
+  two() {
+
+  }
+  toAbout() {
+    this.router.navigate(['blog/about']);
   }
 }

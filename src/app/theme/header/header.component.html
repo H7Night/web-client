@@ -1,20 +1,24 @@
 <mat-toolbar class="blog-toolbar">
   <!-- 主页按钮 -->
-  <button mat-icon-button>
+  <!-- <button mat-icon-button>
     <mat-icon>home</mat-icon>
-  </button>
-
+  </button> -->
+  <a (click)="toHome()"> = ) </a>
   <span class="blog-toolbar-spacer"></span>
-
+  <button mat-button (click)="one()">  栏目1 </button>
+  <button mat-button (click)="two()">  栏目2 </button>
+  <button mat-button (click)="toAbout()">  栏目3 </button>
+  <button mat-button> 关于 </button>
   <!-- 全屏按钮 -->
   <button mat-icon-button (click)="toggleFullScreen()">
     <mat-icon>fullscreen</mat-icon>
   </button>
+  <!-- 明暗模式 -->
+  <button mat-icon-button>
+    <mat-icon>light_mode</mat-icon>
+  </button>
   <!-- 右侧栏按钮 -->
   <button mat-icon-button (click)="toggleSideNavNotice.emit()">
     <mat-icon>list</mat-icon>
-  </button>
-  <button mat-icon-button>
-    <mat-icon>light_mode</mat-icon>
   </button>
 </mat-toolbar>

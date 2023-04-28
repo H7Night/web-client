@@ -7,18 +7,19 @@ import { Error403Component } from './sessions/403.component';
 import { Error404Component } from './sessions/404.component';
 import { Error500Component } from './sessions/500.component';
 import { LayoutComponent } from '../theme/layout/layout.component';
+import { AboutComponent } from './Page/about/about.component';
 
 const routes: Routes = [
 
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
 
   {
     path: 'blog',
     component: LayoutComponent,
     children: [
-
-      { path: 'dashboard', component: DashboardComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'about', component: AboutComponent },
       { path: '**', redirectTo: '404' },
     ],
   },
