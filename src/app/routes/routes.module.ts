@@ -8,10 +8,12 @@ import { Error403Component } from './sessions/403.component';
 import { Error404Component } from './sessions/404.component';
 import { Error500Component } from './sessions/500.component';
 import { AboutComponent } from './Page/about/about.component';
+import { BlogComponent } from './Page/blog/blog.component';
+import { ArchiveComponent } from './Page/archive/archive.component';
 
 @NgModule({
     imports: [SharedModule, RoutesRoutingModule],
-    declarations: [DashboardComponent, HomeComponent, Error403Component,Error404Component,Error500Component, AboutComponent],
+    declarations: [DashboardComponent, HomeComponent, Error403Component,Error404Component,Error500Component, AboutComponent, BlogComponent, ArchiveComponent],
     entryComponents: [],
 })
 export class RoutesModule { }

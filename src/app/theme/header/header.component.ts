@@ -43,7 +43,5 @@ export class HeaderComponent {
   toAbout() {
     this.router.navigate(['blog/about']);
   }
-  changeMode() {
-
-  }
+  changeMode() {}
 }

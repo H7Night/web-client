@@ -8,6 +8,8 @@ import { Error404Component } from './sessions/404.component';
 import { Error500Component } from './sessions/500.component';
 import { LayoutComponent } from '../theme/layout/layout.component';
 import { AboutComponent } from './Page/about/about.component';
+import { BlogComponent } from './Page/blog/blog.component';
+import { ArchiveComponent } from './Page/archive/archive.component';
 
 const routes: Routes = [
 
@@ -19,6 +21,8 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: 'home', component: HomeComponent },
+      { path: 'blog', component: BlogComponent },
+      { path: 'archive', component: ArchiveComponent },
       { path: 'about', component: AboutComponent },
       { path: '**', redirectTo: '404' },
     ],

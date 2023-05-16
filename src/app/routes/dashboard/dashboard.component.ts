@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class DashboardComponent {
   @HostBinding('class') class = 'blog-header';
   constructor(private router: Router) {}
+
   toHome() {
     this.router.navigate(['blog/home']);
   }
