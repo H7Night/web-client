@@ -1,5 +1,5 @@
-import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
-
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +7,16 @@ import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./home.component.less'],
   encapsulation: ViewEncapsulation.None,
 })
-export class HomeComponent {
-  @HostBinding('class') class = 'blog-header';
+export class HomeComponent implements OnInit {
+  displayedColumns: string[] = ['id', 'content'];
+  dataSource: any = [];
+
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void {
+    this.http.get<any[]>('http://localhost:8080/suggestions')
+      .subscribe(data => {
+        this.dataSource = data;
+      });
+  }
 }

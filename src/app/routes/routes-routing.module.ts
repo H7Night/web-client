@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AboutComponent } from './Page/about/about.component';
 
 const routes: Routes = [
 
@@ -14,7 +13,6 @@ const routes: Routes = [
     path: 'blog',
     children: [
       { path: 'home', component: HomeComponent },
-      { path: 'about', component: AboutComponent },
       { path: '**', redirectTo: '404' },
     ],
   }
