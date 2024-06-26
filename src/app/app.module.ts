@@ -9,12 +9,14 @@ import {ErrorCodeComponent} from './shared/components/error-code/error-code.comp
 import {MaterialModule} from './material.module';
 import {RoutesRoutingModule} from './routes/routes-routing.module';
 import {LoginComponent} from './login/login/login.component';
+import {DashboardComponent} from './view/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ErrorCodeComponent
+    ErrorCodeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

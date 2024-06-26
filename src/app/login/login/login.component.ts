@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../../services/auth.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,13 +12,16 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
-  onSubmit() {
+  login() {
     this.authService.login(this.username, this.password).subscribe(
-      (response: any) => {
-        if (response.status === 'success') {
-          this.router.navigate(['/home']); // 根据你的需求修改导航路径
+      response => {
+        if (response.status === 200) {
+          // 保存 token 或其他相关信息
+          localStorage.setItem('token', response.token);
+          // 跳转到 Dashboard
+          this.router.navigate(['/dashboard']);
         } else {
           this.errorMessage = response.message;
         }
