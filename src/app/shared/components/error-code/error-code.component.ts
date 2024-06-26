@@ -1,14 +1,10 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'error-code',
+  selector: 'app-error-code',
   templateUrl: './error-code.component.html',
-  styleUrls: ['./error-code.component.less'],
-  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['./error-code.component.less']
 })
 export class ErrorCodeComponent {
-  @Input() code = '';
-  @Input() title = '';
-  @Input() message = '';
-
+  @Input() message: string = '';
 }
