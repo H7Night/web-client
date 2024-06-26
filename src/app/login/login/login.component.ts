@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
-import {DirectionalityService} from '../../shared';
+import {AuthService} from '../../services/auth.service';
 
 
 @Component({
@@ -13,11 +13,10 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private router: Router, private directionalityService: DirectionalityService) {
-  }
+  constructor(private router: Router, private authService: AuthService) { }
 
   onSubmit() {
-    this.directionalityService.login(this.username, this.password).subscribe(
+    this.authService.login(this.username, this.password).subscribe(
       (response: any) => {
         if (response.status === 'success') {
           this.router.navigate(['/home']); // 根据你的需求修改导航路径
