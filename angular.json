@@ -73,10 +73,10 @@
           "proxyConfig": "src/proxy.conf.json",
           "configurations": {
             "production": {
-              "browserTarget": "Blog:build:production"
+              "buildTarget": "Blog:build:production"
             },
             "development": {
-              "browserTarget": "Blog:build:development"
+              "buildTarget": "Blog:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Blog:build"
+            "buildTarget": "Blog:build"
           }
         },
         "test": {
