@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-register-modal',
@@ -8,7 +10,7 @@ export class RegisterModalComponent {
   username: string = '';
   password: string = '';
 
-  constructor() {}
+  constructor(public dialogRef: MatDialogRef<RegisterModalComponent>) {}
 
   onNoClick(): void {
     this.dialogRef.close();

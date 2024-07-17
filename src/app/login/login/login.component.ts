@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { RegisterModalComponent } from '../register-modal/register-modal.component';
+import {MatDialog} from "@angular/material/dialog";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,7 +14,7 @@ export class LoginComponent {
   errorMessage: string = '';
   hide = signal(true);
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private dialog: MatDialog) {}
 
   login() {
     this.authService.login(this.username, this.password).subscribe(
@@ -41,7 +42,7 @@ export class LoginComponent {
       width: '300px',
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
+    dialogRef.afterClosed().subscribe((result:boolean) => {
       if (result) {
         console.log('The dialog was closed', result);
         // Handle registration result here
