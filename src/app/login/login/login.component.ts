@@ -1,22 +1,23 @@
-import {Component} from '@angular/core';
-import {Router} from '@angular/router';
-import {AuthService} from '../../services/auth.service';
-
+import { Component, signal } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { RegisterModalComponent } from '../register-modal/register-modal.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.less']
+  styleUrls: ['./login.component.less'],
 })
 export class LoginComponent {
   username: string = '';
   password: string = '';
   errorMessage: string = '';
+  hide = signal(true);
 
   constructor(private authService: AuthService, private router: Router) {}
 
   login() {
     this.authService.login(this.username, this.password).subscribe(
-      response => {
+      (response) => {
         if (response.status === 200) {
           // 保存 token 或其他相关信息
           localStorage.setItem('token', response.token);
@@ -30,5 +31,21 @@ export class LoginComponent {
         this.errorMessage = 'Login failed. Please try again.';
       }
     );
+  }
+  showPassword(event: MouseEvent) {
+    this.hide.set(!this.hide());
+    event.stopPropagation();
+  }
+  openRegisterModal(): void {
+    const dialogRef = this.dialog.open(RegisterModalComponent, {
+      width: '300px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        console.log('The dialog was closed', result);
+        // Handle registration result here
+      }
+    });
   }
 }
