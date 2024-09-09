@@ -12,12 +12,14 @@ import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
+import { UserDialogComponent } from './view/user-dialog/user-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    RegisterModalComponent, // Corrected name
+    RegisterModalComponent,
+    UserDialogComponent,
   ],
   bootstrap: [AppComponent],
   imports: [
