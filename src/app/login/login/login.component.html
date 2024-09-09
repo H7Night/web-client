@@ -11,27 +11,15 @@
         </mat-form-field>
         <mat-form-field appearance="fill" class="full-width">
           <mat-label>Enter password</mat-label>
-          <input
-            matInput
-            [(ngModel)]="password"
-            [type]="hide() ? 'password' : 'text'"
-            required
-          />
-          <button
-            mat-icon-button
-            matSuffix
-            (click)="showPassword($event)"
-            [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide()"
-          >
-            <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
-          </button>
+          <input matInput [(ngModel)]="password" name="password" required />
         </mat-form-field>
       </mat-card-content>
       <mat-card-actions>
         <div class="button-row">
           <button mat-button color="primary" type="submit">Login</button>
-          <button mat-flat-button color="primary" type="submit" (click)="openRegisterModal()">Regist</button>
+          <button mat-flat-button color="primary" (click)="openRegisterModal()">
+            Regist
+          </button>
         </div>
       </mat-card-actions>
     </mat-card>
