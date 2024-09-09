@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { RegisterModalComponent } from '../register-modal/register-modal.component';
 import { MatDialog } from '@angular/material/dialog';
+import { error, log } from 'console';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -32,9 +33,6 @@ export class LoginComponent {
           this.errorMessage = response.message;
         }
       },
-      (error) => {
-        this.errorMessage = 'Login failed. Please try again.';
-      }
     );
   }
 
