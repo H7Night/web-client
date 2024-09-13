@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, signal } from '@angular/core';
 import {
   MAT_DIALOG_DATA,
   MatDialog,
@@ -12,6 +12,8 @@ import { User } from 'src/app/models/User';
   styleUrl: './user-dialog.component.less',
 })
 export class UserDialogComponent implements OnInit {
+  hide = signal(true);
+
   selected: any;
   constructor(
     public dialogRef: MatDialogRef<UserDialogComponent>,
@@ -28,5 +30,11 @@ export class UserDialogComponent implements OnInit {
   }
   onSave(): void {
     this.dialogRef.close(this.data.user);
+  }
+
+  //显示密码
+  showPassword(event: MouseEvent) {
+    this.hide.set(!this.hide());
+    event.stopPropagation();
   }
 }

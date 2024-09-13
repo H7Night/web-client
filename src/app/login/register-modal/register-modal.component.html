@@ -10,10 +10,18 @@
       <input
         matInput
         [(ngModel)]="password"
+        [type]="hide() ? 'password' : 'text'"
         name="password"
-        type="password"
         required
       />
+      <button
+        mat-icon-button
+        matSuffix
+        type="button"
+        (click)="showPassword($event)"
+      >
+        <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
     </mat-form-field>
   </form>
 </mat-dialog-content>

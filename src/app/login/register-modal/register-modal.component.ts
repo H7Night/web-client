@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
 
@@ -9,6 +9,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 export class RegisterModalComponent {
   username: string = '';
   password: string = '';
+  hide = signal(true);
 
   constructor(public dialogRef: MatDialogRef<RegisterModalComponent>) {}
 
@@ -19,5 +20,10 @@ export class RegisterModalComponent {
   register(): void {
     // Add your registration logic here
     this.dialogRef.close({ username: this.username, password: this.password });
+  }
+
+  showPassword(event: MouseEvent) {
+    this.hide.set(!this.hide());
+    event.stopPropagation();
   }
 }

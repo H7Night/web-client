@@ -1,20 +1,36 @@
 <h1 mat-dialog-title>{{ data.isEdit ? "编辑用户" : "添加用户" }}</h1>
 <div mat-dialog-content>
-  <mat-form-field appearance="fill">
-    <mat-label>用户名</mat-label>
-    <input matInput [(ngModel)]="data.user.name" />
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>密码</mat-label>
-    <input matInput type="password" [(ngModel)]="data.user.password" />
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>角色</mat-label>
-    <mat-select [(value)]="selected">
-      <mat-option value="amdin">系统管理员</mat-option>
-      <mat-option value="user">普通用户</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <form (ngSubmit)="onSave()">
+    <mat-form-field appearance="fill">
+      <mat-label>用户名</mat-label>
+      <input matInput [(ngModel)]="data.user.name" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>密码</mat-label>
+      <input
+        matInput
+        [(ngModel)]="data.user.password"
+        [type]="hide() ? 'password' : 'text'"
+        name="password"
+        required
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        type="button"
+        (click)="showPassword($event)"
+      >
+        <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>角色</mat-label>
+      <mat-select [(value)]="selected">
+        <mat-option value="amdin">系统管理员</mat-option>
+        <mat-option value="user">普通用户</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">取消</button>
