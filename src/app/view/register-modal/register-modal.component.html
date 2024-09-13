@@ -1,11 +1,11 @@
 <h2 mat-dialog-title>Register</h2>
 <mat-dialog-content>
-  <form (submit)="register()">
-    <mat-form-field appearance="fill">
+  <form (submit)="register()" class="fill-container">
+    <mat-form-field appearance="fill" class="full-width">
       <mat-label>Username</mat-label>
       <input matInput [(ngModel)]="username" name="username" required />
     </mat-form-field>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="full-width">
       <mat-label>Password</mat-label>
       <input
         matInput

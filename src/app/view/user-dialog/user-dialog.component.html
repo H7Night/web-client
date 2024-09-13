@@ -1,12 +1,12 @@
-<h1 mat-dialog-title>{{ data.isEdit ? "编辑用户" : "添加用户" }}</h1>
+<h1 mat-dialog-title>{{ data.isEdit ? "Edit User" : "Add User" }}</h1>
 <div mat-dialog-content>
   <form (ngSubmit)="onSave()">
-    <mat-form-field appearance="fill">
-      <mat-label>用户名</mat-label>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Account</mat-label>
       <input matInput [(ngModel)]="data.user.name" />
     </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>密码</mat-label>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Password</mat-label>
       <input
         matInput
         [(ngModel)]="data.user.password"
@@ -23,8 +23,8 @@
         <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
       </button>
     </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>角色</mat-label>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Role</mat-label>
       <mat-select [(value)]="selected">
         <mat-option value="amdin">系统管理员</mat-option>
         <mat-option value="user">普通用户</mat-option>

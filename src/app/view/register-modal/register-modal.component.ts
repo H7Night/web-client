@@ -5,6 +5,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 @Component({
   selector: 'app-register-modal',
   templateUrl: './register-modal.component.html',
+  styleUrls:['./register-modal.component.less'],
 })
 export class RegisterModalComponent {
   username: string = '';
