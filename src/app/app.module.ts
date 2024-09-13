@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { RoutesRoutingModule } from './routes/routes-routing.module';
-import { LoginComponent } from './login/login/login.component';
+import { LoginComponent } from './view/login/login.component';
 import { DashboardComponent } from './view/dashboard/dashboard.component';
-import { RegisterModalComponent } from './login/register-modal/register-modal.component';
+import { RegisterModalComponent } from './view/register-modal/register-modal.component';
 import {
   provideHttpClient,
   withInterceptorsFromDi,
