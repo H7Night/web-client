@@ -8,7 +8,9 @@ import { environment } from '../../enviroments/index';
 })
 export class AuthService {
   private baseUrl = environment.apiUrl;
-
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
   constructor(private http: HttpClient) {}
 
   login(name: string, password: string): Observable<any> {

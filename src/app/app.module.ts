@@ -13,6 +13,8 @@ import {
   withInterceptorsFromDi,
 } from '@angular/common/http';
 import { UserDialogComponent } from './view/user-dialog/user-dialog.component';
+import { NavbarComponent } from './view/navbar/navbar.component';
+import { LayoutComponent } from './layout/layout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +22,8 @@ import { UserDialogComponent } from './view/user-dialog/user-dialog.component';
     DashboardComponent,
     RegisterModalComponent,
     UserDialogComponent,
+    NavbarComponent,
+    LayoutComponent,
   ],
   bootstrap: [AppComponent],
   imports: [
@@ -31,4 +35,4 @@ import { UserDialogComponent } from './view/user-dialog/user-dialog.component';
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
 })
-export class AppModule { }
+export class AppModule {}
